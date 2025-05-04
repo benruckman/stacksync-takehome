@@ -1,4 +1,5 @@
 import io
+import os
 import sys
 import traceback
 
@@ -13,14 +14,15 @@ def handle_data():
     old_stdout = sys.stdout
     redirected_output = io.StringIO()
     sys.stdout = redirected_output
+    
     try: 
         request_data = request.get_json()
 
         # Run request data's python main function
         exec_globals = {
-            "__builtins__": __builtins__,
             "pd": pd,
             "np": np,
+            "os": os,
         }
         exec(request_data['script'], exec_globals)
 
@@ -42,4 +44,4 @@ def handle_data():
         sys.stdout = old_stdout
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
