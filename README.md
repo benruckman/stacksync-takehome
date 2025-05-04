@@ -16,5 +16,12 @@ https://stacksync-takehome-139953530506.us-west1.run.app
 
 Post @ https://stacksync-takehome-139953530506.us-west1.run.app/execute with a valid body!
 
+### Curl Command: 
+```curl --location 'https://stacksync-takehome-139953530506.us-west1.run.app/execute' \
+--header 'Content-Type: application/json' \
+--data '{
+  "script": "def main():\n    print('\''Hello from script'\'')\n    return 42"
+}'
+```
 ### Notes:
 It outputs a ton of text from stdout from the imports of builtins, pandas, and numpy. I didn't have time to fix this. 
