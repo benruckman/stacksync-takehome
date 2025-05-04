@@ -1,5 +1,5 @@
 ## Safe Python Script Execution service
-This took me ~2 hours.
+This took me ~2.5 hours.
 
 Run with Docker:
 docker build -t flask-nsjail-app .
