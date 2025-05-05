@@ -17,7 +17,8 @@ https://stacksync-takehome-139953530506.us-west1.run.app
 Post @ https://stacksync-takehome-139953530506.us-west1.run.app/execute with a valid body!
 
 ### Curl Command: 
-```curl --location 'https://stacksync-takehome-139953530506.us-west1.run.app/execute' \
+```
+curl --location 'https://stacksync-takehome-139953530506.us-west1.run.app/execute' \
 --header 'Content-Type: application/json' \
 --data '{
   "script": "def main():\n    print('\''Hello from script'\'')\n    return 42"
